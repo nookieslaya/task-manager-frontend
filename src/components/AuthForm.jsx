@@ -10,9 +10,14 @@ const AuthForm = ({
   success,
   children,
   footer,
+  className = "",
 }) => {
   return (
-    <form className="auth-form" onSubmit={onSubmit} noValidate>
+    <form
+      className={`auth-form${className ? ` ${className}` : ""}`}
+      onSubmit={onSubmit}
+      noValidate
+    >
       <header className="auth-form__header">
         <p className="auth-form__eyebrow">Task Manager</p>
         <h1>{title}</h1>

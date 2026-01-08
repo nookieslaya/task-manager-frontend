@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthLayout from "../components/AuthLayout.jsx";
 import AuthForm from "../components/AuthForm.jsx";
 import Input from "../components/Input.jsx";
 import { login, fetchMe, setToken } from "../api/auth.js";
 
-const Login = () => {
+const Login = ({ onAuth }) => {
+  const navigate = useNavigate();
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -28,6 +29,10 @@ const Login = () => {
       setToken(data.token);
       const me = await fetchMe(data.token);
       console.log("Authenticated user:", me);
+      if (onAuth) {
+        onAuth(me.user);
+      }
+      navigate("/dashboard");
     } catch (err) {
       setError(err.message);
     } finally {

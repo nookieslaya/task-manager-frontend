@@ -1,6 +1,16 @@
-const AuthImagePanel = ({ title, subtitle, badge, highlights = [] }) => {
+const AuthImagePanel = ({
+  title,
+  subtitle,
+  badge,
+  highlights = [],
+  className = "",
+}) => {
   return (
-    <aside className="auth-panel auth-panel--visual">
+    <aside
+      className={`auth-panel auth-panel--visual${
+        className ? ` ${className}` : ""
+      }`}
+    >
       <div className="auth-visual">
         {badge ? <span className="auth-visual__badge">{badge}</span> : null}
         <h2>{title}</h2>

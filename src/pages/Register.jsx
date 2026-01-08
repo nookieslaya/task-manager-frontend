@@ -8,6 +8,7 @@ import { register } from "../api/auth.js";
 const Register = () => {
   const navigate = useNavigate();
   const [formState, setFormState] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -62,6 +63,17 @@ const Register = () => {
           </p>
         }
       >
+        <Input
+          id="register-name"
+          name="name"
+          label="Name"
+          type="text"
+          value={formState.name}
+          onChange={handleChange}
+          placeholder="Your name"
+          autoComplete="name"
+          required
+        />
         <Input
           id="register-email"
           name="email"

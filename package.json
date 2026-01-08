@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "@tiptap/extension-placeholder": "^2.11.1",
+    "@tiptap/extension-underline": "^2.11.1",
+    "@tiptap/react": "^2.11.1",
+    "@tiptap/starter-kit": "^2.11.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^6.28.0",
