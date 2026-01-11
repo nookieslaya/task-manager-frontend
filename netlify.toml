@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/api/*"
+  to = "http://srv50.mikr.us:40233/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
